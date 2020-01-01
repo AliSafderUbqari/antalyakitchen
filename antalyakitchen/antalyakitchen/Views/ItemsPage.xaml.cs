@@ -37,7 +37,7 @@ namespace antalyakitchen.Views
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;
-        }
+        } 
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {

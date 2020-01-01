@@ -22,7 +22,7 @@
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
-            <d:ListView.ItemsSource>
+            <!--<d:ListView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>First Item</x:String>
                     <x:String>Second Item</x:String>
@@ -31,21 +31,30 @@
                     <x:String>Fifth Item</x:String>
                     <x:String>Sixth Item</x:String>
                 </x:Array>
-            </d:ListView.ItemsSource>
+            </d:ListView.ItemsSource>-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
-                            <Label Text="{Binding Text}" 
+                            <Label Text="{Binding name}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
-                            <Label Text="{Binding Description}" 
-                                d:Text="Item descripton"
-                                LineBreakMode="NoWrap"
+                            <Label Text="{Binding count, StringFormat='Products: {0:N}'}" 
+                                d:Text="Total Products"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
+                            
+                            <!--<Label Text="Products: " 
+                                d:Text="Total Products"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                            <Label Text="{Binding count}" 
+                                d:Text="Total Products"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />-->
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

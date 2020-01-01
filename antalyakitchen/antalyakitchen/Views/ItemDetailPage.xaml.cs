@@ -28,12 +28,26 @@ namespace antalyakitchen.Views
 
             var item = new Item
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+               
             };
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (viewModel.ItemsList.Count == 0)
+                viewModel.LoadItemsCommand.Execute(null);
+        }
+
+        private void ButtonClicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as Button;
+            var selectedItem = menuItem.CommandParameter as Item;
+            
         }
     }
 }
