@@ -6,7 +6,9 @@ namespace antalyakitchen.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        SelectMenu,
+        PopulateMenuwithListandCard,
+        NewItemPage,
         About
     }
     public class HomeMenuItem

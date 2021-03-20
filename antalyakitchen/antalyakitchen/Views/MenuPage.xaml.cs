@@ -20,7 +20,9 @@ namespace antalyakitchen.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
+                new HomeMenuItem {Id = MenuItemType.SelectMenu, Title="Main Menu" },
+                new HomeMenuItem {Id = MenuItemType.PopulateMenuwithListandCard, Title="Main Menu with ListView" },
+                new HomeMenuItem {Id = MenuItemType.NewItemPage, Title="Add New Item" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 

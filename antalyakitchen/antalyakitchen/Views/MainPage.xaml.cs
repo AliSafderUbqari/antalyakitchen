@@ -21,7 +21,9 @@ namespace antalyakitchen.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.SelectMenu, (NavigationPage)Detail);
+            //MenuPages.Add((int)MenuItemType.PopulateMenuwithListandCard, new NavigationPage(new ListViewItemswithViewCard()));
+            //NavigateFromMenu(1);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -30,8 +32,14 @@ namespace antalyakitchen.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
+                    case (int)MenuItemType.SelectMenu:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        break;
+                    case (int)MenuItemType.NewItemPage:
+                        MenuPages.Add(id, new NavigationPage(new NewItemPage()));
+                        break;
+                    case (int)MenuItemType.PopulateMenuwithListandCard:
+                        MenuPages.Add(id, new NavigationPage(new ListViewItemswithViewCard()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
@@ -46,7 +54,7 @@ namespace antalyakitchen.Views
                 Detail = newPage;
 
                 if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
+                    await Task.Delay(50);
 
                 IsPresented = false;
             }

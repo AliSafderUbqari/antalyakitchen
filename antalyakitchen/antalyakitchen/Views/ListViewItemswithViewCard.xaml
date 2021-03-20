@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="antalyakitchen.Views.ListViewItemswithViewCard">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding ListDetails}" BackgroundColor="AntiqueWhite"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="4" Margin="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Frame IsClippedToBounds="True" Grid.Row="0" 
+                                       HasShadow="True">
+                                    <StackLayout>
+                                        <!--<BoxView HeightRequest="90" WidthRequest="6"></BoxView>-->
+                                        <Image Source="{Binding ImgIcon}"  HorizontalOptions="Center"></Image>
+                                        <Label Text="{Binding Name}" HorizontalTextAlignment="Center"></Label>
+                                    
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
