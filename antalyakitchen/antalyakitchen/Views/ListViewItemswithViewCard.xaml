@@ -16,18 +16,19 @@
                         <ViewCell>
                             <Grid Padding="4" Margin="4">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="0.5*"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition ></ColumnDefinition>
-                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Frame IsClippedToBounds="True" Grid.Row="0" 
+                                <Frame IsClippedToBounds="True" Grid.Row="0"
                                        HasShadow="True">
                                     <StackLayout>
                                         <!--<BoxView HeightRequest="90" WidthRequest="6"></BoxView>-->
-                                        <Image Source="{Binding ImgIcon}"  HorizontalOptions="Center"></Image>
-                                        <Label Text="{Binding Name}" HorizontalTextAlignment="Center"></Label>
+                                        <Image Source="{Binding ItemImage}"  HorizontalOptions="Center"></Image>
+                                        <!--<Image Source="http://xamarin.com/content/images/pages/index/hero.jpg" />-->
+                                        <Label Text="{Binding itemName_En}" HorizontalTextAlignment="Center"></Label>
                                     
                                     </StackLayout>
                                 </Frame>
